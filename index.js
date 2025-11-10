@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 
 // Importador de Rutas
 import projectRoutes from './src/routes/projectRoutes.js';
+import toolsRoutes from './src/routes/toolsRoutes.js';
 
 // --- Configuración Inicial ---
 dotenv.config();
@@ -17,6 +18,9 @@ app.use(express.json());
 // --- Rutas de la API ---
 // Todo lo que empiece con /api/projects será manejado por 'projectRoutes'
 app.use('/api/projects', projectRoutes);
+
+// Rutas de tools
+app.use('/api', toolsRoutes);
 
 // (Se pueden agregar más rutas aquí)
 // app.use('/api/agents', agentRoutes);
