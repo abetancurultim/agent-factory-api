@@ -3,7 +3,8 @@ import {
     getAgentsByProject, 
     createAgent,
     updateAgent,
-    deployAgent, 
+    deployAgent,
+    updateDeployedAgent,
     getProjectAgent,
     deployBridge
 } from '../controllers/agentController.js';
@@ -35,6 +36,10 @@ router.put('/:agentId', updateAgent);
 // Desplegar agente en ElevenLabs
 // POST /api/projects/:projectId/agents/:agentId/deploy
 router.post('/:agentId/deploy', deployAgent);
+
+// Actualizar agente ya desplegado en ElevenLabs
+// PATCH /api/projects/:projectId/agents/:agentId/redeploy
+router.patch('/:agentId/redeploy', updateDeployedAgent);
 
 // POST: Endpoint para desplegar el puente en DO
 router.post('/:agentId/deploy-bridge', deployBridge);

@@ -320,7 +320,6 @@ export const deployAgent = async (req, res) => {
  * [PATCH] /api/projects/:projectId/agents/:agentId/redeploy
  * Actualiza un agente ya desplegado en ElevenLabs
  */
-//! Pendiente por agregar ruta
 export const updateDeployedAgent = async (req, res) => {
   const userId = req.user.uid;
   const { projectId, agentId } = req.params;
